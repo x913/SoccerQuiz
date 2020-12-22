@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_quiz" >
         <action
             android:id="@+id/action_quizFragment_to_goalFragment"
-            app:destination="@id/goalFragment" />
+            app:destination="@id/goalFragment"
+            app:popUpTo="@id/welcomeScreenFragment2"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_quizFragment_to_missFragment"
-            app:destination="@id/missFragment" />
+            app:destination="@id/missFragment"
+            app:popUpTo="@id/welcomeScreenFragment2"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/welcomeScreenFragment2"
@@ -24,7 +28,9 @@
         tools:layout="@layout/fragment_welcome_screen" >
         <action
             android:id="@+id/action_welcomeScreenFragment2_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/welcomeScreenFragment2"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/missFragment"
@@ -33,7 +39,9 @@
         tools:layout="@layout/fragment_miss" >
         <action
             android:id="@+id/action_missFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/goalFragment"
@@ -42,6 +50,18 @@
         tools:layout="@layout/fragment_goal" >
         <action
             android:id="@+id/action_goalFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.get.soccerquiz.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/ballFeaturesFragment"
+        android:name="com.get.soccerquiz.BallFeaturesFragment"
+        android:label="fragment_ball_features"
+        tools:layout="@layout/fragment_ball_features" />
 </navigation>
